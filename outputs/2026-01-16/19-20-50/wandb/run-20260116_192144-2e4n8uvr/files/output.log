@@ -1,0 +1,29 @@
+[34m[1mwandb[0m: [33mWARNING[0m `wandb.require('service')` is a no-op as it is now the default behavior.
+Map: 100%|██████████████████████████████████████████████████████████████████████████████████████| 3668/3668 [00:00<00:00, 5701.08 examples/s]
+[34m[1mwandb[0m: [33mWARNING[0m `wandb.require('service')` is a no-op as it is now the default behavior.
+Map: 100%|████████████████████████████████████████████████████████████████████████████████████████| 408/408 [00:00<00:00, 8183.30 examples/s]
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name                   | Type                          | Params | Mode  | FLOPs
+-----------------------------------------------------------------------------------------
+0 | bert                   | BertForSequenceClassification | 4.4 M  | eval  | 0
+1 | train_accuracy_metric  | BinaryAccuracy                | 0      | train | 0
+2 | val_accuracy_metric    | BinaryAccuracy                | 0      | train | 0
+3 | f1_metric              | BinaryF1Score                 | 0      | train | 0
+4 | precision_macro_metric | BinaryPrecision               | 0      | train | 0
+5 | precision_micro_metric | BinaryPrecision               | 0      | train | 0
+6 | recall_macro_metric    | BinaryRecall                  | 0      | train | 0
+7 | recall_micro_metric    | BinaryRecall                  | 0      | train | 0
+-----------------------------------------------------------------------------------------
+4.4 M     Trainable params
+0         Non-trainable params
+4.4 M     Total params
+17.545    Total estimated model params size (MB)
+7         Modules in train mode
+51        Modules in eval mode
+0         Total Flops
+Epoch 13: 100%|█| 58/58 [00:07<00:00,  7.33it/s, v_num=8uvr, train/loss_step=0.293, train/acc_step=0.900, valid/loss=0.594, valid/acc=0.696, 
+/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:434: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=21` in the `DataLoader` to improve performance.
+/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:434: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=21` in the `DataLoader` to improve performance.
+/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/loops/fit_loop.py:534: Found 51 module(s) in eval mode at the start of training. This may lead to unexpected behavior during training. If this is intentional, you can ignore this warning.
+                                                                                                                                             

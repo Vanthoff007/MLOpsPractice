@@ -1,0 +1,72 @@
+_wandb:
+    value:
+        cli_version: 0.24.0
+        e:
+            40k0lu219yyo38aa4i28c1q1ka8r724t:
+                codePath: train.py
+                codePathLocal: train.py
+                cpu_count: 16
+                cpu_count_logical: 22
+                cudaVersion: "13.1"
+                disk:
+                    /:
+                        total: "156903120896"
+                        used: "147445338112"
+                email: jiowork951@gmail.com
+                executable: /home/arjav.singh/miniconda3/envs/mlops/bin/python3
+                gpu: NVIDIA RTX A500 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 2048
+                      memoryTotal: "4294967296"
+                      name: NVIDIA RTX A500 Laptop GPU
+                      uuid: GPU-4ca9411e-d2ed-7d20-6ad3-522e52835808
+                host: IF-759-Arjav
+                memory:
+                    total: "33081810944"
+                os: Linux-6.8.0-90-generic-x86_64-with-glibc2.39
+                program: /home/arjav.singh/Projects/MLOpsPractice/train.py
+                python: CPython 3.13.11
+                root: .
+                startedAt: "2026-01-16T12:55:47.392722Z"
+                writerId: 40k0lu219yyo38aa4i28c1q1ka8r724t
+        m:
+            - "1": trainer/global_step
+              "6":
+                - 3
+              "7": []
+            - "2": '*'
+              "5": 1
+              "6":
+                - 1
+              "7": []
+        python_version: 3.13.11
+        t:
+            "1":
+                - 1
+                - 9
+                - 11
+                - 49
+                - 51
+                - 103
+            "2":
+                - 1
+                - 9
+                - 11
+                - 49
+                - 51
+                - 103
+            "3":
+                - 7
+                - 13
+                - 66
+            "4": 3.13.11
+            "5": 0.24.0
+            "6": 4.57.5
+            "12": 0.24.0
+            "13": linux-x86_64
+lr:
+    value: 1e-05
+model_name:
+    value: google/bert_uncased_L-2_H-128_A-2

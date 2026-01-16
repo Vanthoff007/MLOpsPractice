@@ -1,0 +1,141 @@
+'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 0991619f-2af1-4aa0-a245-787225114644)')' thrown while requesting HEAD https://huggingface.co/datasets/glue/resolve/bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c/.huggingface.yaml
+Retrying in 1s [Retry 1/5].
+'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 912dce58-43d6-463b-8426-985ca8811ace)')' thrown while requesting HEAD https://huggingface.co/datasets/glue/resolve/bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c/dataset_infos.json
+Retrying in 1s [Retry 1/5].
+[34m[1mwandb[0m: [33mWARNING[0m `wandb.require('service')` is a no-op as it is now the default behavior.
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████| 3668/3668 [00:00<00:00, 22109.86 examples/s]
+[34m[1mwandb[0m: [33mWARNING[0m `wandb.require('service')` is a no-op as it is now the default behavior.
+Map: 100%|███████████████████████████████████████████████████████████████████████████████████████| 408/408 [00:00<00:00, 19398.92 examples/s]
+/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:881: Checkpoint directory /home/arjav.singh/Projects/MLOpsPractice/models exists and is not empty.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name                   | Type                          | Params | Mode  | FLOPs
+-----------------------------------------------------------------------------------------
+0 | bert                   | BertForSequenceClassification | 4.4 M  | eval  | 0
+1 | Dropout                | Dropout                       | 0      | train | 0
+2 | train_accuracy_metric  | BinaryAccuracy                | 0      | train | 0
+3 | val_accuracy_metric    | BinaryAccuracy                | 0      | train | 0
+4 | f1_metric              | BinaryF1Score                 | 0      | train | 0
+5 | precision_macro_metric | BinaryPrecision               | 0      | train | 0
+6 | precision_micro_metric | BinaryPrecision               | 0      | train | 0
+7 | recall_macro_metric    | BinaryRecall                  | 0      | train | 0
+8 | recall_micro_metric    | BinaryRecall                  | 0      | train | 0
+-----------------------------------------------------------------------------------------
+4.4 M     Trainable params
+0         Non-trainable params
+4.4 M     Total params
+17.545    Total estimated model params size (MB)
+8         Modules in train mode
+51        Modules in eval mode
+0         Total Flops
+Epoch 0:   0%|                                                                                                       | 0/115 [00:00<?, ?it/s]
+/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:434: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=21` in the `DataLoader` to improve performance.
+/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:434: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=21` in the `DataLoader` to improve performance.
+/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/loops/fit_loop.py:534: Found 51 module(s) in eval mode at the start of training. This may lead to unexpected behavior during training. If this is intentional, you can ignore this warning.
+Traceback (most recent call last):
+  File "/home/arjav.singh/Projects/MLOpsPractice/train.py", line 48, in <module>
+    main()
+    ~~~~^^
+  File "/home/arjav.singh/Projects/MLOpsPractice/train.py", line 44, in main
+    trainer.fit(mrpc_model, mrpc_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/trainer/trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<6 lines>...
+        weights_only,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/trainer/trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/trainer/trainer.py", line 1079, in _run
+    results = self._run_stage()
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/trainer/trainer.py", line 1123, in _run_stage
+    self.fit_loop.run()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/loops/fit_loop.py", line 217, in run
+    self.advance()
+    ~~~~~~~~~~~~^^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/loops/fit_loop.py", line 465, in advance
+    self.epoch_loop.run(self._data_fetcher)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 153, in run
+    self.advance(data_fetcher)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 352, in advance
+    batch_output = self.automatic_optimization.run(trainer.optimizers[0], batch_idx, kwargs)
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 192, in run
+    self._optimizer_step(batch_idx, closure)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 270, in _optimizer_step
+    call._call_lightning_module_hook(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        trainer,
+        ^^^^^^^^
+    ...<4 lines>...
+        train_step_and_backward_closure,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/trainer/call.py", line 177, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/core/module.py", line 1368, in optimizer_step
+    optimizer.step(closure=optimizer_closure)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/core/optimizer.py", line 154, in step
+    step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/strategies/strategy.py", line 239, in optimizer_step
+    return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/plugins/precision/precision.py", line 123, in optimizer_step
+    return optimizer.step(closure=closure, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/torch/optim/optimizer.py", line 517, in wrapper
+    out = func(*args, **kwargs)
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/torch/optim/optimizer.py", line 82, in _use_grad
+    ret = func(*args, **kwargs)
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/torch/optim/adam.py", line 226, in step
+    loss = closure()
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/plugins/precision/precision.py", line 109, in _wrap_closure
+    closure_result = closure()
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 146, in __call__
+    self._result = self.closure(*args, **kwargs)
+                   ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 131, in closure
+    step_output = self._step_fn()
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 319, in _training_step
+    training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/trainer/call.py", line 329, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/strategies/strategy.py", line 391, in training_step
+    return self.lightning_module.training_step(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/arjav.singh/Projects/MLOpsPractice/model.py", line 49, in training_step
+    self.log("train/loss", outputs.loss, on_epoch=True, prog_bar=True)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/core/module.py", line 444, in log
+    apply_to_collection(
+    ~~~~~~~~~~~~~~~~~~~^
+        value, object, self.__check_allowed, name, value, wrong_dtype=(numbers.Number, Metric, Tensor)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/lightning_utilities/core/apply_func.py", line 54, in apply_to_collection
+    return _apply_to_collection_slow(
+        data,
+    ...<6 lines>...
+        **kwargs,
+    )
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/lightning_utilities/core/apply_func.py", line 98, in _apply_to_collection_slow
+    return function(data, *args, **kwargs)
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/core/module.py", line 656, in __check_allowed
+    raise ValueError(f"`self.log({name}, {value})` was called, but `{type(v).__name__}` values cannot be logged")
+ValueError: `self.log(train/loss, None)` was called, but `NoneType` values cannot be logged
