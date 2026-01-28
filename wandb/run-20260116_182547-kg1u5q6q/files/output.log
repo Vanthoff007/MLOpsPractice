@@ -1,0 +1,32 @@
+[34m[1mwandb[0m: [33mWARNING[0m `wandb.require('service')` is a no-op as it is now the default behavior.
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████| 3668/3668 [00:00<00:00, 21910.54 examples/s]
+[34m[1mwandb[0m: [33mWARNING[0m `wandb.require('service')` is a no-op as it is now the default behavior.
+Map: 100%|███████████████████████████████████████████████████████████████████████████████████████| 408/408 [00:00<00:00, 16364.26 examples/s]
+/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:881: Checkpoint directory /home/arjav.singh/Projects/MLOpsPractice/models exists and is not empty.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name                   | Type                          | Params | Mode  | FLOPs
+-----------------------------------------------------------------------------------------
+0 | bert                   | BertForSequenceClassification | 4.4 M  | eval  | 0
+1 | Dropout                | Dropout                       | 0      | train | 0
+2 | train_accuracy_metric  | BinaryAccuracy                | 0      | train | 0
+3 | val_accuracy_metric    | BinaryAccuracy                | 0      | train | 0
+4 | f1_metric              | BinaryF1Score                 | 0      | train | 0
+5 | precision_macro_metric | BinaryPrecision               | 0      | train | 0
+6 | precision_micro_metric | BinaryPrecision               | 0      | train | 0
+7 | recall_macro_metric    | BinaryRecall                  | 0      | train | 0
+8 | recall_micro_metric    | BinaryRecall                  | 0      | train | 0
+-----------------------------------------------------------------------------------------
+4.4 M     Trainable params
+0         Non-trainable params
+4.4 M     Total params
+17.545    Total estimated model params size (MB)
+8         Modules in train mode
+51        Modules in eval mode
+0         Total Flops
+Epoch 4: 100%|█| 115/115 [00:02<00:00, 47.32it/s, v_num=5q6q, train/loss_step=0.744, train/acc_step=0.500, valid/loss=0.587, valid/acc=0.699,
+/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:434: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=21` in the `DataLoader` to improve performance.
+/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:434: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=21` in the `DataLoader` to improve performance.
+/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/pytorch_lightning/loops/fit_loop.py:534: Found 51 module(s) in eval mode at the start of training. This may lead to unexpected behavior during training. If this is intentional, you can ignore this warning.
+                                                                                                                                             
+`Trainer.fit` stopped: `max_epochs=5` reached.

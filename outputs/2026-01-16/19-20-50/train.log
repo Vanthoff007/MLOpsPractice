@@ -1,0 +1,22 @@
+[2026-01-16 19:20:50,740][__main__][INFO] - data:
+  batch_size: 64
+  max_length: 512
+model:
+  name: bert
+  model_name: google/bert_uncased_L-2_H-128_A-2
+  tokenizer_name: google/bert_uncased_L-2_H-128_A-2
+  lr: 1.0e-05
+trainer:
+  accelerator: gpu
+  devices: 1
+  max_epochs: 20
+  log_every_n_steps: 10
+  deterministic: true
+  limit_train_batches: 0.25
+  limit_val_batches: 0.25
+seed: 42
+
+[2026-01-16 19:20:50,740][__main__][INFO] - Using the model: google/bert_uncased_L-2_H-128_A-2
+[2026-01-16 19:20:50,740][__main__][INFO] - Using the tokenizer: google/bert_uncased_L-2_H-128_A-2
+[2026-01-16 19:21:18,278][huggingface_hub.utils._http][WARNING] - '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: d940efb2-5f37-4203-af72-eb080b12e8a1)')' thrown while requesting HEAD https://huggingface.co/datasets/nyu-mll/glue/resolve/main/README.md
+[2026-01-16 19:21:18,278][huggingface_hub.utils._http][WARNING] - Retrying in 1s [Retry 1/5].

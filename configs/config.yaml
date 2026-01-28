@@ -1,0 +1,6 @@
+defaults:
+  - data: default 
+  - model:  bert
+  - trainer:  gpu
+
+seed:  42
