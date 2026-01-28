@@ -49,9 +49,9 @@ def main(cfg):
         monitor="valid/loss", patience=3, mode="min"
     )
     wandb_logger = WandbLogger(
-        project="MLOpsPractice",
-        entity="vanthoff007-indian-institute-of-technology-madras",
-        name="BERT_Train_2",
+        project=cfg.trainer.project,
+        entity=cfg.trainer.entity,
+        name=cfg.trainer.name,
     )
     trainer = pl.Trainer(
         logger=wandb_logger,
