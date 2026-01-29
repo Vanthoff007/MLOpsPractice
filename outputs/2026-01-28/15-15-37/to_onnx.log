@@ -1,0 +1,78 @@
+[2026-01-28 15:15:37,473][__main__][INFO] - Root directory: /home/arjav.singh/Projects/MLOpsPractice
+[2026-01-28 15:15:37,474][__main__][INFO] - Loading model from: /home/arjav.singh/Projects/MLOpsPractice/models/best_checkpoint.ckpt
+[2026-01-28 15:15:42,985][datasets.load][WARNING] - Using the latest cached version of the dataset since glue couldn't be found on the Hugging Face Hub
+[2026-01-28 15:15:42,987][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'mrpc' at /home/arjav.singh/.cache/huggingface/datasets/glue/mrpc/0.0.0/bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c (last modified on Wed Jan 28 15:09:12 2026).
+[2026-01-28 15:15:45,396][datasets.load][WARNING] - Using the latest cached version of the dataset since glue couldn't be found on the Hugging Face Hub
+[2026-01-28 15:15:45,398][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'mrpc' at /home/arjav.singh/.cache/huggingface/datasets/glue/mrpc/0.0.0/bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c (last modified on Wed Jan 28 15:09:12 2026).
+[2026-01-28 15:15:45,429][__main__][INFO] - Converting model to ONNX format...
+[2026-01-28 15:15:48,497][onnxscript.version_converter][WARNING] - The model version conversion is not supported by the onnxscript version converter and fallback is enabled. The model will be converted using the onnx C API (target version: 10).
+[2026-01-28 15:15:48,512][onnxscript.version_converter][WARNING] - Failed to convert the model to the target version 10 using the ONNX C API. The model was not modified
+Traceback (most recent call last):
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/onnxscript/version_converter/__init__.py", line 127, in call
+    converted_proto = _c_api_utils.call_onnx_api(
+        func=_partial_convert_version, model=model
+    )
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/onnxscript/version_converter/_c_api_utils.py", line 65, in call_onnx_api
+    result = func(proto)
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/onnxscript/version_converter/__init__.py", line 122, in _partial_convert_version
+    return onnx.version_converter.convert_version(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        proto, target_version=self.target_version
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/arjav.singh/miniconda3/envs/mlops/lib/python3.13/site-packages/onnx/version_converter.py", line 39, in convert_version
+    converted_model_str = C.convert_version(model_str, target_version)
+RuntimeError: /github/workspace/onnx/version_converter/adapters/no_previous_version.h:26: adapt: Assertion `false` failed: No Previous Version of LayerNormalization exists
+[2026-01-28 15:15:48,516][onnx_ir.passes.common.unused_removal][INFO] - No unused functions to remove
+[2026-01-28 15:15:48,516][onnxscript.optimizer._constant_folding][INFO] - Skipping constant folding for node 'node_Shape_0' because it is graph input to preserve graph signature
+[2026-01-28 15:15:48,517][onnxscript.optimizer._constant_folding][INFO] - Skipping constant folding for node 'node_Shape_1' because it is graph input to preserve graph signature
+[2026-01-28 15:15:48,524][onnxscript.optimizer._constant_folding][INFO] - Skipping constant folding for node 'node_embedding' because it is graph input to preserve graph signature
+[2026-01-28 15:15:48,526][onnxscript.optimizer._constant_folding][INFO] - Skipping constant folding for node 'node_slice_3' because it is graph input to preserve graph signature
+[2026-01-28 15:15:48,552][onnxscript.rewriter.rules.common._collapse_slices][INFO] - The value 'start', 'end', 'axis', 'step' is not statically known.
+[2026-01-28 15:15:48,555][onnxscript.rewriter.rules.common._collapse_slices][INFO] - The value 'start', 'end', 'axis', 'step' is not statically known.
+[2026-01-28 15:15:48,596][onnx_ir.passes.common.unused_removal][INFO] - Removed 77 unused nodes
+[2026-01-28 15:15:48,598][onnx_ir.passes.common.unused_removal][INFO] - No unused functions to remove
+[2026-01-28 15:15:48,598][onnxscript.optimizer._constant_folding][INFO] - Skipping constant folding for node 'node_Shape_0' because it is graph input to preserve graph signature
+[2026-01-28 15:15:48,598][onnxscript.optimizer._constant_folding][INFO] - Skipping constant folding for node 'node_Shape_1' because it is graph input to preserve graph signature
+[2026-01-28 15:15:48,599][onnxscript.optimizer._constant_folding][INFO] - Skipping constant folding for node 'node_embedding' because it is graph input to preserve graph signature
+[2026-01-28 15:15:48,600][onnxscript.optimizer._constant_folding][INFO] - Skipping constant folding for node 'node_Identity_237' because it is graph input to preserve graph signature
+[2026-01-28 15:15:48,600][onnxscript.optimizer._constant_folding][INFO] - Skipping constant folding for node 'node_Unsqueeze_239' because it is graph input to preserve graph signature
+[2026-01-28 15:15:48,611][onnxscript.rewriter.rules.common._collapse_slices][INFO] - The value 'start', 'end', 'axis', 'step' is not statically known.
+[2026-01-28 15:15:48,613][onnxscript.rewriter.rules.common._collapse_slices][INFO] - The value 'start', 'end', 'axis', 'step' is not statically known.
+[2026-01-28 15:15:48,639][onnx_ir.passes.common.unused_removal][INFO] - Removed 20 unused nodes
+[2026-01-28 15:15:48,640][onnx_ir.passes.common.unused_removal][INFO] - No unused functions to remove
+[2026-01-28 15:15:48,644][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_24' with existing initializer 'val_9'
+[2026-01-28 15:15:48,644][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_109' with existing initializer 'val_107'
+[2026-01-28 15:15:48,644][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_181' with existing initializer 'val_107'
+[2026-01-28 15:15:48,644][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_183' with existing initializer 'val_107'
+[2026-01-28 15:15:48,644][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_2' with existing initializer 'val_18'
+[2026-01-28 15:15:48,644][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_10' with existing initializer 'val_9'
+[2026-01-28 15:15:48,644][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_25' with existing initializer 'val_9'
+[2026-01-28 15:15:48,644][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_54' with existing initializer 'val_9'
+[2026-01-28 15:15:48,644][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_72' with existing initializer 'val_64'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_73' with existing initializer 'val_65'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_74' with existing initializer 'val_66'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_80' with existing initializer 'val_64'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_81' with existing initializer 'val_65'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_82' with existing initializer 'val_66'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_95' with existing initializer 'val_64'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_101' with existing initializer 'val_64'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_128' with existing initializer 'clone_1'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_140' with existing initializer 'val_64'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_141' with existing initializer 'val_65'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_142' with existing initializer 'val_66'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_148' with existing initializer 'val_64'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_149' with existing initializer 'val_65'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_150' with existing initializer 'val_66'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_156' with existing initializer 'val_64'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_157' with existing initializer 'val_65'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_158' with existing initializer 'val_66'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_170' with existing initializer 'val_94'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_173' with existing initializer 'val_99'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_175' with existing initializer 'val_64'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_191' with existing initializer 'val_117'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_199' with existing initializer 'val_125'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_202' with existing initializer 'clone_1'
+[2026-01-28 15:15:48,645][onnx_ir.passes.common.initializer_deduplication][INFO] - Replaced initializer 'val_204' with existing initializer 'val_130'
+[2026-01-28 15:15:48,693][__main__][INFO] - Model successfully converted to ONNX format and saved.

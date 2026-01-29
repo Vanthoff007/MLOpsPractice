@@ -1,0 +1,7 @@
+[2026-01-28 15:04:36,220][__main__][INFO] - Root directory: /home/arjav.singh/Projects/MLOpsPractice
+[2026-01-28 15:04:36,220][__main__][INFO] - Loading model from: /home/arjav.singh/Projects/MLOpsPractice/models/best_checkpoint.ckpt
+[2026-01-28 15:04:44,594][datasets.load][WARNING] - Using the latest cached version of the dataset since glue couldn't be found on the Hugging Face Hub
+[2026-01-28 15:04:44,597][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'mrpc' at /home/arjav.singh/.cache/huggingface/datasets/glue/mrpc/0.0.0/bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c (last modified on Mon Jan 19 16:31:22 2026).
+[2026-01-28 15:04:47,064][datasets.load][WARNING] - Using the latest cached version of the dataset since glue couldn't be found on the Hugging Face Hub
+[2026-01-28 15:04:47,066][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'mrpc' at /home/arjav.singh/.cache/huggingface/datasets/glue/mrpc/0.0.0/bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c (last modified on Mon Jan 19 16:31:22 2026).
+[2026-01-28 15:04:48,172][__main__][INFO] - Converting model to ONNX format...
