@@ -1,0 +1,38 @@
+# ===============================
+# Base Image
+# ===============================
+FROM continuumio/miniconda3:latest
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
+
+WORKDIR /ws
+
+# ===============================
+# System dependencies
+# ===============================
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# ===============================
+# Copy environment file
+# ===============================
+COPY env.yml .
+
+# Install into base env
+RUN conda env update -n base -f env.yml && conda clean -afy
+
+# ===============================
+# Copy project
+# ===============================
+COPY . .
+
+EXPOSE 8501
+
+# ===============================
+# Run Streamlit
+# ===============================
+CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0"]
