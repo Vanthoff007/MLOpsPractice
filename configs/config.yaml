@@ -1,6 +1,14 @@
 defaults:
-  - data: default 
-  - model:  bert
-  - trainer:  gpu
+  - data: default
+  - model: bert
+  - trainer: gpu
+  - logger: wandb
+  - paths: default
+  - _self_
 
-seed:  42
+seed: 42
+early_stopping_patience: 3
+
+hydra:
+  job:
+    chdir: false

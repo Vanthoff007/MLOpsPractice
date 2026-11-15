@@ -1,0 +1,21 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Training artifacts (only the exported ONNX model is tracked)
+models/*
+!models/mrpc_model.onnx
+!models/mrpc_model.onnx.data
+*.ckpt
+logs/
+outputs/
+multirun/
+wandb/
+lightning_logs/

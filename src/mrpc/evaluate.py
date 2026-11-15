@@ -1,4 +1,9 @@
-from inference_onnx import OnnxInference
+"""Behavioural test suite: hand-written sentence pairs grouped by phenomenon.
+
+Run: `python -m mrpc.evaluate [--onnx models/mrpc_model.onnx]`
+"""
+
+from mrpc.inference import OnnxPredictor, best
 
 
 def get_test_examples():
@@ -191,7 +196,7 @@ def run_tests(predictor):
 
             try:
                 result = predictor.predict(sentence1, sentence2)
-                predicted_label = max(result, key=lambda x: x["score"])
+                predicted_label = best(result)
 
                 print(f"  Results: {result}")
                 print(
@@ -200,10 +205,10 @@ def run_tests(predictor):
                 print(f"  Expected: {expected}")
 
                 if predicted_label["label"] == expected:
-                    print("PASS")
+                    print("  PASS")
                     correct += 1
                 else:
-                    print("FAIL")
+                    print("  FAIL")
 
                 if note:
                     print(f"  Note: {note}")
@@ -240,24 +245,13 @@ def run_tests(predictor):
         f"\n{'TOTAL':20s}: {total_correct:2d}/{total_tests:2d} ({overall_accuracy:5.1f}%)"
     )
     print("=" * 80)
+    return total_correct, total_tests
 
 
 if __name__ == "__main__":
-    # Initialize predictor
-    predictor = OnnxInference("./models/mrpc_model.onnx")
+    import argparse
 
-    # Run all tests
-    run_tests(predictor)
-
-    # Or test individual examples
-    print("\n" + "=" * 80)
-    print("INDIVIDUAL TEST EXAMPLES")
-    print("=" * 80 + "\n")
-
-    # Quick test
-    s1 = "The firm announced increased earnings."
-    s2 = "The company reported higher profits."
-    result = predictor.predict(s1, s2)
-    print(f"Sentence 1: {s1}")
-    print(f"Sentence 2: {s2}")
-    print(f"Result: {result}\n")
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--onnx", default="models/mrpc_model.onnx")
+    args = parser.parse_args()
+    run_tests(OnnxPredictor(args.onnx))

@@ -1,0 +1,4 @@
+model_dir: models
+log_dir: logs
+checkpoint: ${paths.model_dir}/best_checkpoint.ckpt
+onnx_model: ${paths.model_dir}/mrpc_model.onnx

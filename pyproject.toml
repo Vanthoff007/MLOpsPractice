@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mrpc"
+version = "0.2.0"
+description = "End-to-end MLOps practice: paraphrase detection on GLUE MRPC with Lightning, Hydra, W&B, ONNX, Streamlit and Docker."
+readme = "README.md"
+requires-python = ">=3.10"
+# Inference only: enough for the Streamlit app and Docker image (no torch).
+dependencies = [
+    "numpy",
+    "onnxruntime",
+    "transformers",
+]
+
+[project.optional-dependencies]
+app = ["streamlit"]
+train = [
+    "torch",
+    "pytorch-lightning>=2.0",
+    "torchmetrics",
+    "datasets",
+    "hydra-core>=1.3",
+    "wandb",
+    "python-dotenv",
+    "onnx",
+]
+dev = ["pytest", "ruff"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["network: needs to download a tokenizer from the Hugging Face Hub"]
+
+[tool.ruff]
+line-length = 100

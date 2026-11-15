@@ -1,4 +1,5 @@
-accelerator:  cpu
+# Passed straight to pytorch_lightning.Trainer
+accelerator: cpu
 devices: 1
 max_epochs: 10
 log_every_n_steps: 10

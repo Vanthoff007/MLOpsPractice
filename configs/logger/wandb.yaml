@@ -1,0 +1,5 @@
+# Set enabled=false (or WANDB_MODE=offline) to train without a W&B account.
+enabled: true
+project: MLOpsPractice
+entity: vanthoff007-indian-institute-of-technology-madras  # override with logger.entity=<you>
+run_name: ${model.name}-train

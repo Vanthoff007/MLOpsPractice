@@ -1,0 +1,10 @@
+.env
+.git
+.venv
+**/__pycache__
+*.ckpt
+logs/
+outputs/
+wandb/
+lightning_logs/
+tests/
